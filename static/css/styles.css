@@ -1,3 +1,20 @@
 .logo {
   max-width: 72px;
 }
+
+.total_comment {
+  font-size: 150%;
+}
+
+.comment_text {
+  font-size: large;
+  text-align: justify;
+}
+
+.post_text {
+  text-align: justify;
+}
+
+.post_block {
+  margin-top: 150px;
+}

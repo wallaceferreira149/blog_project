@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+  <h1>{{post.title}}</h1>
+  <hr>
+  <h5 class="right">Published On: {{post.published_on | date:"d M Y"}} - {{post.published_on | time:"H:i"}}</h5>
+  <div class="post_block">
+    <p class="flow-text post_text">{{post.post_text}}</p>
+  </div>
+  <hr>
+  <div class="">
+    {% for comment in comments %}
+      <p class="flow-text comment_text">{{comment.comment_text}}</p>
+      <p class="">Created at: {{comment.created_at | date:"d M Y"}} - {{comment.created_at | time:"H:i"}}</p>
+      <hr>
+    {% endfor %}
+  </div>
+{% endblock%}
