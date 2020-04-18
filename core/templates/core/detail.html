@@ -6,12 +6,27 @@
   <h5 class="right">Published On: {{post.published_on | date:"d M Y"}} - {{post.published_on | time:"H:i"}}</h5>
   <div class="post_block">
     <p class="flow-text post_text">{{post.post_text}}</p>
+    <br>
+    <p class="right">Author: {{post.author}}</p>
+    <br><br>
+    <hr>
   </div>
-  <hr>
+  <div class="row">
+    <div class="col s12 m11">
+      <div class="card-panel">
+        <span class="card-title">New Comment</span>
+        <form class="" action="" method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input class="btn" type="submit" name="" value="submit">
+        </form>
+      </div>
+    </div>
+  </div>
   <div class="">
     {% for comment in comments %}
       <p class="flow-text comment_text">{{comment.comment_text}}</p>
-      <p class="">Created at: {{comment.created_at | date:"d M Y"}} - {{comment.created_at | time:"H:i"}}</p>
+      <p class="">Created at: {{comment.created_at | date:"d M Y"}} - {{comment.created_at | time:"H:i"}} by <strong>{{comment.author_comment}}</strong></p>
       <hr>
     {% endfor %}
   </div>
